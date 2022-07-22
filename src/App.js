@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+import React,{useEffect, useState} from 'react';
 import './App.css';
+import Header from './Components/Header';
+import Main from './Components/Main';
+import Transaction from './Components/Transaction';
 
-function App() {
+function App(props) {
+  
+  const [transactions , updateTransaction] =useState([]);
+  const [expense , updateExpense] =useState(0);
+  const [income , updateIncome] =useState(0);
+    const onSaveHandler = (payload)=>{
+        const transactionArray= [...transactions];
+        console.log(transactionArray);
+        transactionArray.push(payload);
+        updateTransaction(transactionArray);
+        
+    };
+
+
+    const calculateBalance = ()=>{
+      let exp=0;
+      let inc=0;
+      transactions.map((payload)=>{
+        // console.log((Number(payload.amount))+100);
+        // console.log(typeof(exp));
+        payload.type==="EXPENSE"
+        ?(exp = exp +Number(payload.amount))
+        :(inc = inc + Number(payload.amount));
+      });
+      updateExpense(exp);
+      updateIncome(inc);
+    };
+    useEffect(() => calculateBalance(), [transactions]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+    <Main onsave={onSaveHandler} expense={expense} income={income} />
+    <Transaction transaction={transactions}/>
+    </>
   );
 }
 
