@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chaudhary123k/Expense-Tracker.git/static/css/main.b6ae67a0.css",
+    "main.js": "/chaudhary123k/Expense-Tracker.git/static/js/main.640fcc36.js",
+    "static/js/787.28cb0dcd.chunk.js": "/chaudhary123k/Expense-Tracker.git/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/chaudhary123k/Expense-Tracker.git/index.html",
+    "main.b6ae67a0.css.map": "/chaudhary123k/Expense-Tracker.git/static/css/main.b6ae67a0.css.map",
+    "main.640fcc36.js.map": "/chaudhary123k/Expense-Tracker.git/static/js/main.640fcc36.js.map",
+    "787.28cb0dcd.chunk.js.map": "/chaudhary123k/Expense-Tracker.git/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6ae67a0.css",
+    "static/js/main.640fcc36.js"
+  ]
+}
